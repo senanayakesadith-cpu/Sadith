@@ -198,6 +198,27 @@ section{
     transform:translateY(-10px);
 }
 
+#contact h2{
+    margin-bottom: 20px;
+}
+
+.contact-Box{
+    padding: 10px;
+    margin: auto;
+    border-radius: 30px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    margin-bottom: 10px;
+    width: 400px;
+    font-size: larger;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
 @media(max-width:768px){
 
     .profile-pic{
