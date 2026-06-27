@@ -97,3 +97,71 @@ section{
     text-align: center;
 }
 
+.profile-card {
+    width: 350px;
+    background: rgba(2, 79, 100, 0.436);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: scale 0.4s;
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+}
+
+.profile-card:hover{
+    scale: 1.1;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.role {
+    color: #4f7df3;
+    font-weight: 600;
+    font-size: 20px;
+    height: 30px;
+}
+
+.bio {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+@media(max-width:768px){
+
+    .profile-pic{
+        left: 50px;
+        top: 300px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+
+    nav{
+        flex-direction:column; 
+    }
+
+    nav ul{
+        margin-top:10px;
+        align-items: right;
+        display: flex;
+        margin: auto;
+        margin-right: 0px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    section h2{
+        padding-top: 40px;
+    }
+}
