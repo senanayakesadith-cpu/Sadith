@@ -134,6 +134,20 @@ section{
     margin-bottom: 20px;
 }
 
+.education-card{
+    background:#1e1e1e;
+    padding:20px;
+    margin-bottom: 40px;
+    transition:0.4s;
+}
+
+.education-card:hover{
+    transform:translateY(-10px);
+}
+
+#education h2{
+    margin-bottom: 30px;
+}
 
 @media(max-width:768px){
 
