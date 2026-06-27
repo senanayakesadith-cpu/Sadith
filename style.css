@@ -50,3 +50,50 @@ nav ul li a{
 nav ul li a:hover{
     color:#00bcd4;
 }
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero span{
+    color:#00bcd4;
+}
+
+.hero p{
+    margin:15px 0;
+    font-size:1.2rem;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#00bcd4;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+section{
+    padding:100px 10%;
+    text-align: center;
+}
+
