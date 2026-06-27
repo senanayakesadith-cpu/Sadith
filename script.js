@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Dark Mode Toggle
+// Dark Mode
 const btn = document.getElementById("themeBtn");
 
 if (btn) {
@@ -56,3 +56,20 @@ if (btn) {
         }
     });
 }
+
+// Scroll Animation
+const sections = document.querySelectorAll(".profile-card, .edu-card, .skill, .project-card, .contact-Box");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+sections.forEach((item) => {
+    observer.observe(item);
+});
