@@ -149,6 +149,34 @@ section{
     margin-bottom: 30px;
 }
 
+#skills h2{
+    margin-bottom: 20px;
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    color: rgb(255, 255, 255);
+}
+
+.skill{
+    background:#00bcd4;
+    padding:15px 25px;
+    border-radius:30px;
+    transition: background-color 0.4s;
+}
+
+.skill:hover{
+    background-color: #017b8b81;
+}
+
+.skill a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
 @media(max-width:768px){
 
     .profile-pic{
