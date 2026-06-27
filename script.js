@@ -37,3 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
         type();
     }
 });
+
+// Dark Mode Toggle
+const btn = document.getElementById("themeBtn");
+
+if (btn) {
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            btn.innerHTML = "☀️ Light Mode";
+            btn.style.backgroundColor = "#f1c40f";
+            btn.style.color = "#000";
+        } else {
+            btn.innerHTML = "🌙 Dark Mode";
+            btn.style.backgroundColor = "#2c3e50";
+            btn.style.color = "#fff";
+        }
+    });
+}
