@@ -13,7 +13,7 @@ body{
     font-family:Arial, sans-serif;
 }
 header{
-    background:#1e1e1e;
+    background:#010f6bca;
     position:fixed;
     width:100%;
     top:0px;
@@ -135,7 +135,7 @@ section{
 }
 
 .education-card{
-    background:#1e1e1e;
+    background:#02159172;
     padding:20px;
     margin-bottom: 40px;
     transition:0.4s;
@@ -188,7 +188,7 @@ section{
 }
 
 .project-card{
-    background:#1e1e1e;
+    background:#02159172;
     padding:20px;
     border-radius:10px;
     transition:0.4s;
@@ -247,7 +247,6 @@ button {
 
 .dark-mode {
     background: linear-gradient(135deg,rgb(224, 247, 255),rgb(135, 206, 250),rgb(255, 255, 255));
-
 }
 
 @media(max-width:768px){
