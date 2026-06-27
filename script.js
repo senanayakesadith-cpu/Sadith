@@ -57,6 +57,38 @@ if (btn) {
     });
 }
 
+const skillCards = document.querySelectorAll(".skill-card");
+
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            const bars =
+                entry.target.querySelectorAll(".progress-fill");
+
+            bars.forEach((bar) => {
+
+                const width =
+                    bar.closest(".skill-item")
+                       .dataset.width;
+
+                bar.style.width = width + "%";
+            });
+
+            skillObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
+skillCards.forEach((card) => {
+    skillObserver.observe(card);
+});
+
 // Scroll Animation
 const sections = document.querySelectorAll(".profile-card, .edu-card, .skill, .project-card, .contact-Box");
 
@@ -73,3 +105,4 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((item) => {
     observer.observe(item);
 });
+
