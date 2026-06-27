@@ -177,6 +177,27 @@ section{
     color: #ffffff;
 }
 
+#projects h2{
+    margin-bottom: 30px;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project-card{
+    background:#1e1e1e;
+    padding:20px;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
 @media(max-width:768px){
 
     .profile-pic{
