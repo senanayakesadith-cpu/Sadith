@@ -31,9 +31,11 @@
     </section>
     <section id="about">
         <div class="about-container">
-            <div class="section-title">
-                <h2>About</h2>
+            <div class="badge">
+                <i class="fas fa-address-card"></i> About Me
             </div>
+
+            <h2>About</h2>
 
             <div class="profile-card">
                 <img src="Images/My Self.jpg" class="avatar" alt="Profile" />
@@ -258,28 +260,92 @@
         </div>
     </section>
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
 
-            <div class="project-card">
-                <h3>Student Management System</h3><br>
-                <p>A Java application for managing student records.</p>
+        <div class="section-header">
+            <div class="badge">
+                <i class="fas fa-folder-open"></i>
+                My Work
             </div>
 
-            <div class="project-card">
-                <h3>Portfolio Website</h3><br>
-                <p>Responsive personal portfolio using HTML, CSS, JS.</p>
+            <h2>Featured <span>Projects</span></h2>
+
+            <p>Some projects I have developed.</p>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="java">Java</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card" data-category="java">
+
+                <div class="project-body">
+                    <span class="project-category">
+                        Java Application
+                    </span>
+
+                    <h3>Sales Management System</h3>
+
+                    <p>
+                        Java OOP system with database connectivity
+                        for managing sales records.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">OOP</span>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="project-card">
-                <h3>Sales Management System</h3><br>
-                <p>Developed a Sales Management System using Java OOP concepts with database connectivity.</p>
+            <div class="project-card" data-category="web">
+
+                <div class="project-body">
+                    <span class="project-category">
+                        Web Project
+                    </span>
+
+                    <h3>Portfolio Website</h3>
+
+                    <p>
+                        Responsive personal portfolio website using
+                        HTML, CSS and JavaScript.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="project-card">
-                <h3>Material Management System For Japura Flames</h3><br>
-                <p>The official media unit of the University of Sri Jayewardenepura, was developed to efficiently manage
-                    and track media equipment, inventory, and resources.</p>
+            <div class="project-card" data-category="web">
+
+                <div class="project-body">
+                    <span class="project-category">
+                        Management System
+                    </span>
+
+                    <h3>Material Management System</h3>
+
+                    <p>
+                        Material management system developed for
+                        Japura Flames media unit.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Database</span>
+                        <span class="tag">Fullstact</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
