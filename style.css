@@ -1,4 +1,4 @@
-/* ================= GLOBAL ================= */
+/* GLOBAL */
 
 * {
     margin: 0;
@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header {
     background: rgba(1, 15, 107, 0.85);
@@ -57,7 +57,7 @@ nav ul li a:hover {
     color: #00bcd4;
 }
 
-/* ================= BUTTONS ================= */
+/* BUTTONS */
 
 button,
 .btn {
@@ -78,7 +78,7 @@ button:hover,
     transform: translateY(-3px);
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -131,16 +131,17 @@ button:hover,
     margin-bottom: 20px;
 }
 
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 
 section {
     padding: 100px 10%;
     text-align: center;
 }
 
-/* ================= GLASS CARD SYSTEM (FIXED CONSISTENCY) ================= */
+/* GLASS CARD SYSTEM */
 
 .profile-card,
+.about-card,
 .edu-card,
 .project-card,
 .skill-card,
@@ -152,17 +153,207 @@ section {
     border-radius: 20px;
 }
 
-/* ================= PROFILE CARD ================= */
+/* ABOUT ME */
 
-.profile-card {
-    width: 350px;
+.about-card {
+    max-width: 1200px;
     margin: auto;
-    margin-top: 30px;
-    padding: 30px;
+    padding: 50px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-left {
     text-align: center;
 }
 
-/* ================= SECTION HEADER ================= */
+.avatar-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    box-shadow: 0 10px 30px rgba(0,188,212,0.4);
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0b0d15;
+}
+
+.status-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    background: #111;
+    color: #4ade80;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .4;
+        transform: scale(.8);
+    }
+}
+
+.about-left h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.title-role {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 30px;
+    color: #00bcd4;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.greeting {
+    color: #00bcd4;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-right h1 {
+    font-size: 45px;
+    line-height: 1.3;
+}
+
+.about-right h1 span {
+    color: #00bcd4;
+}
+
+.bio {
+    line-height: 1.8;
+    color: #dddddd;
+    font-size: 17px;
+}
+
+.bio strong {
+    color: white;
+}
+
+.stats-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.number {
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+.label {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.section-label {
+    margin-bottom: 15px;
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+.skills-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills-pills span {
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.skills-pills span:hover {
+    background: #00bcd4;
+    transform: translateY(-3px);
+}
+
+.skills-pills i {
+    margin-right: 8px;
+}
+
+.cta-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: #00bcd4;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0097a7;
+    transform: translateY(-4px);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+}
 
 .section-header {
     text-align: center;
@@ -179,8 +370,6 @@ section {
     margin: auto;
 }
 
-/* BADGE */
-
 .badge {
     display: inline-block;
     background: #00bcd4;
@@ -191,7 +380,7 @@ section {
     font-size: 14px;
 }
 
-/* ================= EDUCATION ================= */
+/* EDUCATION */
 
 .education-grid {
     display: flex;
@@ -220,7 +409,7 @@ section {
     margin: auto;
 }
 
-/* ================= SKILLS ================= */
+/* SKILLS */
 
 .skills-grid {
     display: grid;
@@ -284,7 +473,7 @@ section {
     transition: width 1.2s ease;
 }
 
-/* ================= PROJECTS ================= */
+/* PROJECTS  */
 
 .projects-grid {
     display: grid;
@@ -317,7 +506,7 @@ section {
     margin: 5px;
 }
 
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact-section {
     padding: 100px 8%;
@@ -362,7 +551,7 @@ section {
     margin-top: 20px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer {
     text-align: center;
@@ -382,22 +571,79 @@ footer {
     color: #00bcd4;
 }
 
-/* ================= DARK MODE ================= */
+/* DARK MODE */
 
 .dark-mode {
     background: linear-gradient(135deg, #e0f7ff, #87cefa, #ffffff);
     color: black;
 }
 
-.dark-mode .profile-card,
+.dark-mode .about-card,
 .dark-mode .edu-card,
 .dark-mode .project-card,
 .dark-mode .skill-card,
 .dark-mode .contact-card {
+    background: rgba(255,255,255,0.85);
     color: black;
 }
 
-/* ================= RESPONSIVE ================= */
+.dark-mode .bio,
+.dark-mode .label,
+.dark-mode .section-header p,
+.dark-mode .project-category,
+.dark-mode .meta {
+    color: #333;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode strong {
+    color: black;
+}
+
+.dark-mode .skills-pills span,
+.dark-mode .title-role,
+.dark-mode .social-links a {
+    background: rgba(0,0,0,0.08);
+    color: black;
+}
+
+.dark-mode header {
+    background: rgba(159, 249, 251, 0.9);
+}
+
+.dark-mode nav ul li a {
+    color: black;
+}
+
+.dark-mode .logo {
+    color: #0097a7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .about-right {
+        align-items: center;
+    }
+
+    .stats-row {
+        justify-content: center;
+    }
+
+    .about-right h1 {
+        font-size: 35px;
+    }
+}
 
 @media (max-width: 768px) {
 
@@ -438,9 +684,61 @@ footer {
 
     .edu-card {
         flex-direction: column;
+        text-align: center;
     }
 
-    .edu-body{
+    .edu-body {
         margin: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .about-card {
+        padding: 30px 20px;
+    }
+
+    .avatar-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .about-left h2 {
+        font-size: 24px;
+    }
+
+    .about-right h1 {
+        font-size: 28px;
+    }
+
+    .bio {
+        font-size: 15px;
+    }
+
+    .stats-row {
+        gap: 20px;
+    }
+
+    .number {
+        font-size: 28px;
+    }
+
+    .cta-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .skills-pills {
+        justify-content: center;
     }
 }

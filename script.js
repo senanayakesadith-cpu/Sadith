@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ==========================
-    // Typing Effect (FIXED)
-    // ==========================
+    /* TYPING EFFECT */
     const texts = [
         "Undergraduate",
         "Web Developer",
@@ -42,150 +40,206 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (typingElement) type();
+    if (typingElement) {
+        type();
+    }
 
+    /* DARK MODE */
 
-    // ==========================
-    // Dark Mode (IMPROVED)
-    // ==========================
-    const btn = document.getElementById("themeBtn");
+    const themeBtn = document.getElementById("themeBtn");
 
-    if (btn) {
-        btn.addEventListener("click", () => {
+    if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+
             document.body.classList.toggle("dark-mode");
 
             if (document.body.classList.contains("dark-mode")) {
-                btn.textContent = "☀️ Light Mode";
+                themeBtn.textContent = "☀️ Light Mode";
             } else {
-                btn.textContent = "🌙 Dark Mode";
+                themeBtn.textContent = "🌙 Dark Mode";
             }
         });
     }
 
+    /* SKILL ANIMATION */
 
-    // ==========================
-    // SKILLS ANIMATION (FIXED)
-    // ==========================
     const skillCards = document.querySelectorAll(".skill-card");
 
     const skillObserver = new IntersectionObserver((entries, observer) => {
+
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
                 entry.target.classList.add("visible");
 
-                const bars = entry.target.querySelectorAll(".progress-fill");
+                const bars =
+                    entry.target.querySelectorAll(".progress-fill");
 
                 bars.forEach(bar => {
-                    const width = bar.closest(".skill-item").dataset.width;
+                    const width =
+                        bar.closest(".skill-item").dataset.width;
+
                     bar.style.width = width + "%";
                 });
 
                 observer.unobserve(entry.target);
             }
-
         });
-    }, { threshold: 0.3 });
 
-    skillCards.forEach(card => skillObserver.observe(card));
+    }, {
+        threshold: 0.3
+    });
 
+    skillCards.forEach(card => {
+        skillObserver.observe(card);
+    });
 
-    // ==========================
-    // PROJECT FILTER (FIXED)
-    // ==========================
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
+    /* PROJECT FILTER */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const projectCards =
+        document.querySelectorAll(".project-card");
 
     filterButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            filterButtons.forEach(btn => btn.classList.remove("active"));
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
             button.classList.add("active");
 
             const filter = button.dataset.filter;
 
             projectCards.forEach(card => {
 
-                if (filter === "all" || card.dataset.category === filter) {
+                if (
+                    filter === "all" ||
+                    card.dataset.category === filter
+                ) {
                     card.style.display = "block";
                 } else {
                     card.style.display = "none";
                 }
-
             });
-
         });
-
     });
 
 
-    // ==========================
-    // CONTACT ANIMATION (FIXED)
-    // ==========================
-    const contactCards = document.querySelectorAll(".contact-card");
-    const ctaBtn = document.getElementById("ctaBtn");
+    /* CONTACT ANIMATION */
 
-    const contactObserver = new IntersectionObserver((entries, observer) => {
+    const contactCards =
+        document.querySelectorAll(".contact-card");
 
-        entries.forEach(entry => {
+    const contactObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-            if (entry.isIntersecting) {
-
-                const delay = parseInt(entry.target.dataset.delay) || 0;
-
-                setTimeout(() => {
-                    entry.target.classList.add("visible");
-                }, delay * 100);
-
-                observer.unobserve(entry.target);
-            }
-
-        });
-
-    }, { threshold: 0.3 });
-
-    contactCards.forEach(card => contactObserver.observe(card));
-
-
-    // ==========================
-    // CTA BUTTON ANIMATION
-    // ==========================
-    if (ctaBtn) {
-        const btnObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
+
                 if (entry.isIntersecting) {
-                    ctaBtn.classList.add("visible");
+
+                    entry.target.classList.add("visible");
+
                     observer.unobserve(entry.target);
                 }
             });
-        });
 
-        btnObserver.observe(ctaBtn);
-    }
-
-
-    // ==========================
-    // SCROLL ANIMATION (CLEANED)
-    // ==========================
-    const scrollElements = document.querySelectorAll(
-        ".profile-card, .edu-card, .skill-card, .project-card"
+        },
+        {
+            threshold: 0.3
+        }
     );
 
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    contactCards.forEach(card => {
+        contactObserver.observe(card);
+    });
 
-        entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
+    /* ABOUT STATS COUNTER */
+
+    const statNumbers =
+        document.querySelectorAll(".number");
+
+    function animateNumber(element) {
+
+        const target =
+            parseInt(element.dataset.count);
+
+        let current = 0;
+
+        const increment =
+            Math.max(1, Math.floor(target / 50));
+
+        const timer = setInterval(() => {
+
+            current += increment;
+
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
             }
 
-        });
+            element.textContent = current;
 
-    }, { threshold: 0.2 });
+        }, 30);
+    }
 
-    scrollElements.forEach(el => scrollObserver.observe(el));
+    const statsObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    animateNumber(entry.target);
+
+                    observer.unobserve(entry.target);
+                }
+            });
+
+        },
+        {
+            threshold: 0.5
+        }
+    );
+
+    statNumbers.forEach(number => {
+        statsObserver.observe(number);
+    });
+
+
+    /* SCROLL ANIMATION */
+
+    const scrollElements =
+        document.querySelectorAll(
+            ".about-card, .edu-card, .skill-card, .project-card"
+        );
+
+    const scrollObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+                }
+            });
+
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    scrollElements.forEach(element => {
+        scrollObserver.observe(element);
+    });
 
 });
