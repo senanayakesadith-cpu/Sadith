@@ -33,18 +33,10 @@ nav {
     padding: 15px 40px;
 }
 
-.logo {
-    color: #00bcd4;
-    font-size: 30px;
-}
-
 nav ul {
-    list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
+    list-style: none;
+    gap: 25px;
 }
 
 nav ul li a {
@@ -648,13 +640,16 @@ footer {
 @media (max-width: 768px) {
 
     nav {
-        flex-direction: column;
-        gap: 15px;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+    nav ul{
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
     }
 
     .hero {
@@ -717,6 +712,14 @@ footer {
 
     .bio {
         font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .stats-row {
