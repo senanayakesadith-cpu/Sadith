@@ -49,6 +49,13 @@ nav ul li a:hover {
     color: #00bcd4;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
 /* BUTTONS */
 
 button,
@@ -688,6 +695,44 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+        background: rgba(1,15,107,0.95);
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* Hide links before clicking */
+    nav ul {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 
     section {
         padding: 80px 5%;
